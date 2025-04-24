@@ -1,0 +1,53 @@
+/* Style the product cards */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  border: none;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Style the product images */
+#productImg {
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+/* Style the text in the card */
+.card-body {
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
