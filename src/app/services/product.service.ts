@@ -7,6 +7,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
+  category: string;
   imgUrl: string;
 }
 
@@ -28,11 +29,14 @@ export class ProductService {
 
   addToCart(productId: number, quantity: number): Observable<any> {
     const userId = localStorage.getItem('user_id');
-
     const headers = new HttpHeaders({
-      Authorization: 'Bearer ' + localStorage.getItem('access_token')
+      Authorization: 'Bearer ' + localStorage.getItem('access_token') || ''
     });
 
-    return this.http.post<number>(`http://localhost:8080/api/v1/cart/${userId}/${productId}/${quantity}`, {}, { headers });
+    return this.http.post(
+      `http://localhost:8080/api/v1/cart/${userId}/${productId}/${quantity}`,
+      {},
+      { headers }
+    );
   }
 }

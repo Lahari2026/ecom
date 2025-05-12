@@ -1,4 +1,152 @@
+/* Main container styling */
+.container {
+  min-height: 80vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Table card styling */
+.table-bordered {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(31, 38, 135, 0.1);
+  border: none;
+  margin-top: 1.5rem;
+}
+
+/* Table header */
+.table thead th {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Table rows */
+.table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Table cells */
+.table td {
+  vertical-align: middle;
+  padding: 1rem;
+  border-color: #e9ecef;
+}
+
+/* Product image styling */
 .product-image {
-    max-width: 100px; 
-    max-height: 100px;
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+/* Clickable table cells */
+td[style="cursor: pointer;"]:hover {
+  color: #4b6cb7;
+}
+
+/* Remove button */
+.btn-danger {
+  background: #dc3545;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.1s;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Checkout button */
+.btn-primary {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 4px 12px rgba(75, 108, 183, 0.1);
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Total price display */
+.d-flex.justify-content-end p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #182848;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+/* Empty cart message */
+.empty-cart {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #4b6cb7;
+    border-radius: 8px;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    padding: 0.5rem 1rem;
+    border: none;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .product-image {
+    margin: 0 auto;
+  }
+
+  .btn-primary {
+    width: 100%;
+    margin-left: 0;
+  }
 }

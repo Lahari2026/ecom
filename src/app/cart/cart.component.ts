@@ -10,17 +10,17 @@ export class CartComponent implements OnInit {
   numberOfItemsInCart = 0;
 
   constructor(private cartService: CartService) {}
-  
+
   ngOnInit() {
     console.log('Cart component initialized.');
-  
+
     const userId = localStorage.getItem('user_id');
     const jwt = localStorage.getItem('access_token');
-  
+
     if (userId && jwt) {
       const userIdNumber = +userId;
       console.log('User ID number:', userIdNumber);
-  
+
       this.cartService.getCartItemsCount(userIdNumber).subscribe(
         (response: any) => {
           console.log('Response:', response);

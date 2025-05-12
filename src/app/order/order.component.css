@@ -1,0 +1,74 @@
+/* Container and heading alignment */
+.container.text-center {
+  margin-top: 2.5rem;
+}
+
+/* Orders heading */
+.display-5 {
+  font-weight: 700;
+  color: #4b6cb7;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+/* Table card effect */
+.col-md-8 {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(75, 108, 183, 0.10);
+  padding: 2rem 1.5rem;
+}
+
+/* Table styling */
+.table {
+  margin-bottom: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+}
+
+.table thead th {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.5rem;
+}
+
+.table tbody td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.85rem 0.5rem;
+  border-color: #e9ecef;
+  font-size: 1rem;
+}
+
+.table-bordered {
+  border: none;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: none;
+  border-bottom: 1px solid #e3eafc;
+}
+
+.table-bordered tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-8 {
+    padding: 1rem 0.2rem;
+  }
+  .display-5 {
+    font-size: 2rem;
+  }
+  .table thead {
+    font-size: 0.9rem;
+  }
+}

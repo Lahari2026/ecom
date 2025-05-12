@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface CartItem {
-  imgUrl: any;
+  image: any;
   productId: number;
   productName: string;
   quantity: number;
@@ -38,3 +38,10 @@ export class CartService {
     return this.http.delete<CartItem[]>(apiUrl);
   }
 }
+
+
+
+
+
+
+

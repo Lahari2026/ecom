@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService, Product } from 'src/app/services/product.service';
+import { ProductService } from 'src/app/services/product.service';
+
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  imgUrl: string;
+}
 
 @Component({
   selector: 'app-home',

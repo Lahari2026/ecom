@@ -23,33 +23,28 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     const productId = this.route.snapshot.params['id'];
-    this.productService.getProductById(productId)
+    this.productService.getProductById(+productId)
       .pipe(
         catchError(err => {
           console.error('Error fetching product details:', err);
           return EMPTY;
         })
       )
-      .subscribe(
-        (product: Product) => {
-          this.product = product;
-        }
-      );
+      .subscribe((product: Product) => {
+        this.product = product;
+      });
   }
 
   addToCart(productId: number, quantity: number) {
     this.productService.addToCart(productId, quantity).subscribe(
       response => {
-        console.log('Product added to cart:', response);
-  
+        alert("Product added to cart.");
         const userId = localStorage.getItem('user_id');
-  
         if (userId) {
           this.cartService.getCartItemsCount(+userId).subscribe(
             (count: number) => {
-              alert("Product added to cart.");
               this.cartService.updateCartItemCount(count);
-              this.cdRef.detectChanges(); 
+              this.cdRef.detectChanges();
               window.location.reload();
             },
             (error: any) => {
